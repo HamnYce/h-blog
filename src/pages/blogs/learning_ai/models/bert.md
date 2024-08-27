@@ -31,6 +31,7 @@ In recent years, researches have been showing that a similar technique can be us
 A different approach, which is also popular in NLP tasks and exemplified in the recent ELMo paper, is feature-based training. In this approach, a pre-trained neural network produces word embeddings, these embeddings are then used as features in NLP models.
 
 
-### [BERT Explained: A Complete Guide with Theory and Tutorial]https://medium.com/@samia.khalid/bert-explained-a-complete-guide-with-theory-and-tutorial-3ac9ebc8fa7c
-[The detailed workings of Transformer are described in a paper by Google](https://arxiv.org/pdf/1706.03762.pdf)
-### How BERT works
+### [BERT Explained: A Complete Guide with Theory and Tutorial](https://medium.com/@samia.khalid/bert-explained-a-complete-guide-with-theory-and-tutorial-3ac9ebc8fa7c)
+
+
+### [The detailed workings of Transformer are described in a paper by Google](https://arxiv.org/pdf/1706.03762.pdf)
