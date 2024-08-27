@@ -18,11 +18,9 @@ const { pageTitle } = Astro.props;
 			<div class="w-1/4">
 				<Navigation />
 			</div>
-			<div class="w-3/4 sm:w-full p-10 sm:p-0">
+			<div class="w-full p-10 sm:p-0">
 				<Header pageTitle={pageTitle} />
-				<div class="py-10 px-5 border-x-2 border-white w-fit">
-					<slot />
-				</div>
+				<slot />
 			</div>
 		</div>
 	</body>
