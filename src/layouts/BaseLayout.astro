@@ -1,0 +1,29 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
+
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<div class="w-full h-full flex flex-col sm:flex-row">
+			<div class="w-1/4">
+				<Navigation />
+			</div>
+			<div class="w-3/4 p-10">
+				<Header pageTitle={pageTitle} />
+				<div class="py-10 px-5 border-x-2 border-white w-fit">
+					<slot />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
