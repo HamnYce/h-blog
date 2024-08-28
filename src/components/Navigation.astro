@@ -1,4 +1,5 @@
 ---
+import Graph from "../components/Graph.astro";
 const allPosts = await Astro.glob("../pages/blogs/learning_ai/**/*.md");
 //	TODO: replace open drawer with with icon for opening and closing
 // TODO: organise the links based on their path
@@ -14,6 +15,7 @@ const allPosts = await Astro.glob("../pages/blogs/learning_ai/**/*.md");
 		<label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"
 		></label>
 		<ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+			<Graph posts={allPosts} />
 			<!-- Sidebar content here -->
 			<li><a href="/">Homepage</a></li>
 			{
