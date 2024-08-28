@@ -1,9 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Graph from "../components/Graph.astro";
+
 const allPosts = await Astro.glob("./**/*.md");
+const files = [
+	...new Set(
+		allPosts.flatMap((post) => post.url?.split("/")).filter((p) => p !== ""),
+	),
+];
+const nodes = files.map((name, id) => {
+	return { name, id };
+});
+const links = allPosts.flatMap((post) => {
+	if (!post.url) return {};
+
+	const links = [];
+	const splitPaths = post.url.split("/");
+	for (let i = 1; i < splitPaths.length - 1; i++) {
+		links.push({
+			source: files.indexOf(splitPaths[i]),
+			target: files.indexOf(splitPaths[i + 1]),
+		});
+	}
+	return links;
+});
+const data = { nodes, links };
 ---
 
 <BaseLayout>
 	<h1>Hamnyce's H-Blog</h1>
 	<p>On the button to your left to begin searching through my notes</p>
+	<Graph data={data} />
 </BaseLayout>
