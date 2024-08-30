@@ -1,5 +1,5 @@
 ---
-const { posts } = Astro.props;
+const { posts }: Record<string, Record<string, any>[]> = Astro.props;
 const files = [
 	...new Set(
 		posts.flatMap((post) => post.url?.split("/")).filter((p) => p !== ""),
@@ -26,10 +26,11 @@ const links = posts.flatMap((post) => {
 <div id="graph-container"></div>
 <script type="module" define:vars={{ nodes, links }}>
 	import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+	const graphContainer = document.querySelector("#graph-container");
 
 	// Specify the dimensions of the chart.
-	const width = 928;
-	const height = 600;
+	const width = graphContainer.offsetWidth;
+	const height = graphContainer.offsetWidth;
 
 	// Specify the color scale.
 	const color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -120,6 +121,5 @@ const links = posts.flatMap((post) => {
 	// stop naturally, but it’s a good practice.)
 	// invalidation.then(() => simulation.stop());
 
-	const graphContainer = document.querySelector("#graph-container");
 	graphContainer.append(svg.node());
 </script>
