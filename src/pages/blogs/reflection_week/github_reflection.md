@@ -56,3 +56,5 @@ the next was creating a scripts repo.
 - here i am considering how to organise tese. should i tbe based on language?
   or use case ?
 - ive decided use case. people can read these scripts and translate the logic to any other language. but this way atleast they can navigate with intent
+
+my next steps in this plan will be to clean up the private repositories (reupload them if necessary) to remove useless/confidential data.
