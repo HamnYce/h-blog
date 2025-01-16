@@ -98,3 +98,5 @@ keep adventuregamerepo as it is (humble beginnings)
 delete all the other repos
 
 clean up google drive
+
+update resume
