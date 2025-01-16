@@ -3,19 +3,31 @@ tags:
   - reflection
   - growth
 title: Raw Todo List
-pubDate: 8/27/2024
+pubDate: 1/16/2025
 layout: ../../../layouts/MarkdownLayout.astro
 ---
+
+pico-ctf can be placed in challenges and competitions folder
+
+move all small scripts and such into their own repo (sub directories based on language?)
+
+collate all competition repos into one repo with subdirectories
 
 Before adding readmes:
 read how to make good readmes
 
+add screenshots with the readmes
+
 add readme to picoCTF repo
 
-touch and fix dashboard twitter visualisation
+touch and fix dashboard twitter visualisation [new dataset](https://crisisnlp.qcri.org/covid19)
 
 - readme.md
-- change input to csv
+- change input to csv (or json)
+- make sure to cite
+- live_page can become live_recreation_page
+- chop down the information as much as possible
+- rewrite in golang [echarts](https://github.com/go-echarts/go-echarts?tab=readme-ov-file)
 
 create documents/certifications pdf
 
@@ -61,6 +73,16 @@ clean up github repos and ensure nice, consistent naming scheme
 
 opensource foodwiz
 
+- remove every file except:
+  - app/
+  - src/
+  - firebase.json
+  - package.json
+- label it as built as an expo app
+- remove the api keys in spoonacular!
+- label the important dependencies and configurations that must take place
+- explain the what the program was doing and so on.
+
 create a blog post for each projects 'reflection'
 
 Unify all github repo names and have amazing READMEs (nested if necessary)
@@ -98,5 +120,7 @@ keep adventuregamerepo as it is (humble beginnings)
 delete all the other repos
 
 clean up google drive
+
+clean up (locally) my quick programs folder and create a repo to host it
 
 update resume
