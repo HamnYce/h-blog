@@ -26,12 +26,52 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - build-your-own-lisp-c: lisp implementation
 - chess-ruby: chess implementation
 - client-server-chat-app-wails: client-server chat
+- coding-challenges: comps, ctfs, codewars
+- configs: lunarvim, sublime etc
+- ffxiv-tribal-quest-scraper-notebook (private): ffxiv wiki quest scraper
+- foodwiz-react-native (private): food planner mobile app
+- geotag-tweet-visualisation (private): tweet visualiser
+- h-blog: source code for the blog you are currently reading
+- jsb (redacted): None
+- jf (redacted): None
+- megaman-zero-clone-godot (private): megaman zero clone
+- mini-games-ruby: mini games written while learning ruby
+- music-mood-matcher: music recommendation system using sentiment analysis
+- numerical-analysis-notebook (private): analysis of iterative vs analytical solutions
+- obsidian-vault: various categorized and uncategorized notes
+- portfolio: source code for portfolio website
+- scripts: various scripts categorized by intent
+- text-based-adventure-game (private): first 'full' project ever written
+- themy-net: full-stack application to scan,store and allow categorization of network devices
+- touch-designer-sketches: for-fun sketches made in touchdesigner
+
+*all private repos listed will eventually become public or deleted
 
 ## Adding Nice READMEs
 
 [Making A Good Readme](https://www.makeareadme.com)
 
-will use the same list (but with checkboxes) as the section above
+- [ ] build-your-own-lisp-c
+- [ ] chess-ruby
+- [ ] client-server-chat-app-wails
+- [ ] coding-challenges
+- [ ] configs
+- [ ] ffxiv-tribal-quest-scraper-notebook (private)
+- [ ] foodwiz-react-native (private)
+- [ ] geotag-tweet-visualisation (private)
+- [ ] h-blog
+- [ ] jsb (redacted)
+- [ ] jf (redacted)
+- [ ] megaman-zero-clone-godot (private)
+- [ ] mini-games-ruby
+- [ ] music-mood-matcher
+- [ ] numerical-analysis-notebook (private)
+- [ ] obsidian-vault
+- [ ] portfolio
+- [ ] scripts
+- [ ] text-based-adventure-game (private)
+- [ ] themy-net
+- [ ] touch-designer-sketches
 
 ## reflections
 
