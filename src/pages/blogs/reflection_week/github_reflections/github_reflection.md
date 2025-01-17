@@ -54,8 +54,8 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - [ ] build-your-own-lisp-c
 - [ ] chess-ruby
 - [ ] client-server-chat-app-wails
-- [ ] coding-challenges
-- [ ] configs
+- [x] coding-challenges
+- [x] configs
 - [ ] ffxiv-tribal-quest-scraper-notebook
 - [ ] foodwiz-react-native
 - [ ] geotag-tweet-visualisation
