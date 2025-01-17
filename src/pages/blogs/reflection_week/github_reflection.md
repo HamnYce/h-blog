@@ -68,7 +68,12 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - [ ] numerical-analysis-notebook
 - [ ] obsidian-vault
 - [ ] portfolio
-- [ ] scripts
+- [ ] scriptsthe
+
+  - [x] run-command-on-file-change
+  - [ ] scrape-links
+  - [ ] scrape-subreddit-top-images
+
 - [ ] text-based-adventure-game
 - [ ] themy-net
 - [ ] touch-designer-sketches
