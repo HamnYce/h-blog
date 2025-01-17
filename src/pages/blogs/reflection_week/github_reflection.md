@@ -45,7 +45,7 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - themy-net: full-stack application to scan,store and allow categorization of network devices
 - touch-designer-sketches: for-fun sketches made in touchdesigner
 
-\*repos are private by default and will be made public once the appropriate changes have been made
+\*repos are private by default and will be made public once a nice readme has been added
 
 ## Adding Nice READMEs
 
