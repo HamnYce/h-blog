@@ -28,24 +28,24 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - client-server-chat-app-wails: client-server chat
 - coding-challenges: comps, ctfs, codewars
 - configs: lunarvim, sublime etc
-- ffxiv-tribal-quest-scraper-notebook (private): ffxiv wiki quest scraper
-- foodwiz-react-native (private): food planner mobile app
-- geotag-tweet-visualisation (private): tweet visualiser
+- ffxiv-tribal-quest-scraper-notebook: ffxiv wiki quest scraper
+- foodwiz-react-native: food planner mobile app
+- geotag-tweet-visualisation: tweet visualiser
 - h-blog: source code for the blog you are currently reading
 - jsb (redacted): None
 - jf (redacted): None
-- megaman-zero-clone-godot (private): megaman zero clone
+- megaman-zero-clone-godot: megaman zero clone
 - mini-games-ruby: mini games written while learning ruby
 - music-mood-matcher: music recommendation system using sentiment analysis
-- numerical-analysis-notebook (private): analysis of iterative vs analytical solutions
+- numerical-analysis-notebook: analysis of iterative vs analytical solutions
 - obsidian-vault: various categorized and uncategorized notes
 - portfolio: source code for portfolio website
 - scripts: various scripts categorized by intent
-- text-based-adventure-game (private): first 'full' project ever written
+- text-based-adventure-game: first 'full' project ever written
 - themy-net: full-stack application to scan,store and allow categorization of network devices
 - touch-designer-sketches: for-fun sketches made in touchdesigner
 
-*all private repos listed will eventually become public or deleted
+\*repos are private by default and will be made public once the appropriate changes have been made
 
 ## Adding Nice READMEs
 
