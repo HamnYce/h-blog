@@ -56,20 +56,20 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - [ ] client-server-chat-app-wails
 - [ ] coding-challenges
 - [ ] configs
-- [ ] ffxiv-tribal-quest-scraper-notebook (private)
-- [ ] foodwiz-react-native (private)
-- [ ] geotag-tweet-visualisation (private)
+- [ ] ffxiv-tribal-quest-scraper-notebook
+- [ ] foodwiz-react-native
+- [ ] geotag-tweet-visualisation
 - [ ] h-blog
 - [ ] jsb (redacted)
 - [ ] jf (redacted)
-- [ ] megaman-zero-clone-godot (private)
+- [ ] megaman-zero-clone-godot
 - [ ] mini-games-ruby
 - [ ] music-mood-matcher
-- [ ] numerical-analysis-notebook (private)
+- [ ] numerical-analysis-notebook
 - [ ] obsidian-vault
 - [ ] portfolio
 - [ ] scripts
-- [ ] text-based-adventure-game (private)
+- [ ] text-based-adventure-game
 - [ ] themy-net
 - [ ] touch-designer-sketches
 
