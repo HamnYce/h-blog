@@ -7,7 +7,7 @@ tags:
   - scripting
 title: 'scripts' Repo Reflection
 pubDate: 1/17/2025
-layout: ../../../layouts/MarkdownLayout.astro
+layout: ../../../../layouts/MarkdownLayout.astro
 ---
 
 ## run-command-on-file-change

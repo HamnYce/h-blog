@@ -6,7 +6,7 @@ tags:
   - repo
 title: Github Reflection
 pubDate: 1/16/2025
-layout: ../../../layouts/MarkdownLayout.astro
+layout: ../../../../layouts/MarkdownLayout.astro
 ---
 
 ## [Github](https://www.github.com/Hamnyce)
