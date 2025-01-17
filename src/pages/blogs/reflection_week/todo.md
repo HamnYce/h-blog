@@ -7,18 +7,52 @@ pubDate: 1/16/2025
 layout: ../../../layouts/MarkdownLayout.astro
 ---
 
-pico-ctf can be placed in challenges and competitions folder
+## Done
 
-move all small scripts and such into their own repo (sub directories based on language?)
+~~pico-ctf can be placed in challenges and competitions folder~~
 
-collate all competition repos into one repo with subdirectories
+~~move all small scripts and such into their own repo (sub directories based on language?)~~
+
+~~collate all competition repos into one repo with subdirectories~~
+
+~~perhaps keep documentation of all this in blog~~
+
+~~Unify all github repo names~~
+
+opensource foodwiz
+
+- remove every file except:
+  - ~~app/~~
+  - ~~src/~~
+  - ~~firebase.json~~
+  - ~~package.json~~
+
+create a blog post for each projects 'reflection'
+
+- ~~github~~
+
+## Todo
+
+### Scripts
+
+clean up link scraper
+
+- add a brief readme
+- comment the code
+
+clean flutter hot reloader
+
+- add readme (explain how to use it)
+- add arg passing
+
+clean up (maybe just archive) the reddit scraper repo
+
+### Uncategorized
 
 Before adding readmes:
-read how to make good readmes
 
-add screenshots with the readmes
-
-add readme to picoCTF repo
+- read how to make good readmes
+- add screenshots with the readmes
 
 touch and fix dashboard twitter visualisation [new dataset](https://crisisnlp.qcri.org/covid19)
 
@@ -42,27 +76,22 @@ create documents/certifications pdf
 complete chess ruby
 
 - en pessant
-- readme.md
 
 recreate p5js sketches from instagram and host them (as collage)
 
 - include sketches from p5js.org (in account)
 
-retouch readme for lispi
-
-implement portfolio website
+implement portfolio website (once design finishes)
 
 make kanban standalone (perhaps opensource it)
 
 formalize vim & sublime config on gh
 
-- with nice readmes
+- with nice comments
 
-touch up and publicise TouchDesigner repo (rename it to sketches)
+touch up TouchDesigner repo (rename it to sketches)
 
 - small tutorial / explanation of each project (nested readmes)
-
-perhaps keep documentation of all this in blog
 
 clean up the blog (dead links)
 
@@ -73,19 +102,14 @@ clean up github repos and ensure nice, consistent naming scheme
 
 opensource foodwiz
 
-- remove every file except:
-  - app/
-  - src/
-  - firebase.json
-  - package.json
 - label it as built as an expo app
-- remove the api keys in spoonacular!
+- remove the api keys (OR just deauth them)!
 - label the important dependencies and configurations that must take place
 - explain the what the program was doing and so on.
 
 create a blog post for each projects 'reflection'
 
-Unify all github repo names and have amazing READMEs (nested if necessary)
+have amazing READMEs (nested if necessary)
 
 clean up tribal quests scraper
 
@@ -96,24 +120,12 @@ clean up numerical project repo
 
 - place brief readme of the assignment and what was requested
 
-clean up link scraper
-
-- add a brief readme
-- comment the code
-
 clean up music-mood-matcher
 
 - opensource it
 - rename it
 - place a good readme. as well as how to use it.
 - reupload the project (if there are private credentials exposed)
-
-clean flutter hot reloader
-
-- add readme (explain how to use it)
-- add arg passing
-
-clean up (maybe just archive) the reddit scraper repo
 
 keep adventuregamerepo as it is (humble beginnings)
 
