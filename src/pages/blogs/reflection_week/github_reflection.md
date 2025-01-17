@@ -68,11 +68,11 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - [ ] numerical-analysis-notebook
 - [ ] obsidian-vault
 - [ ] portfolio
-- [ ] scriptsthe
+- [x] scripts
 
   - [x] run-command-on-file-change
-  - [ ] scrape-links
-  - [ ] scrape-subreddit-top-images
+  - [x] scrape-links
+  - [x] scrape-subreddit-top-images
 
 - [ ] text-based-adventure-game
 - [ ] themy-net
@@ -103,3 +103,9 @@ the next was creating a scripts repo.
 - ive decided use case. people can read these scripts and translate the logic to any other language. but this way atleast they can navigate with intent
 
 my next steps in this plan will be to clean up the private repositories (reupload them if necessary) to remove useless/confidential data.
+
+GPT and copilot have been instrumental to rewriting the scripts i made as well as creating nicely formatted readme files
+
+although i worry at time that i might be losing experience by not writing the scripts myself. I can say that I am definetly getting a feel for it.
+
+but as they say, experience is king! so i will aim to eventually write these scripts myself
