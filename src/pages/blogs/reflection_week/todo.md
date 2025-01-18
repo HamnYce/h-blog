@@ -15,7 +15,7 @@ while adding readmes:
 
 - add screenshots with the readmes
 
-touch and fix dashboard twitter visualization [new dataset](https://crisisnlp.qcri.org/covid19)
+touch and fix dashboard twitter visualization (will be reworked in golang) [new dataset](https://crisisnlp.qcri.org/covid19)
 
 - readme.md
 - change input to csv (or json)
@@ -23,16 +23,6 @@ touch and fix dashboard twitter visualization [new dataset](https://crisisnlp.qc
 - live_page can become live_recreation_page
 - chop down the information as much as possible
 - rewrite in golang [echarts](https://github.com/go-echarts/go-echarts?tab=readme-ov-file)
-
-create documents/certifications pdf
-
-- host on github
-- highschool 2nd in the world IGCSEs
-- UPCSE Foundation
-- microsoft 2013 certs
-- competitions pdf
-  - programming comps (\_\_PC)
-  - -thons (datathon, hackathon)
 
 complete chess ruby
 
@@ -45,11 +35,6 @@ recreate p5js sketches from instagram and host them (as collage)
 implement portfolio website (once design finishes)
 
 make kanban standalone (perhaps open-source it)
-
-clean up the blog (dead links)
-
-- clean the blog repo
-- add nice readme
 
 opensource foodwiz
 
@@ -99,6 +84,11 @@ make foodwiz open source
 
 create a blog post for each projects 'reflection'
 
+clean up the blog (dead links)
+
+- ~~clean the blog repo~~
+- add nice readme
+
 ## Done
 
 ~~pico-ctf can be placed in challenges and competitions folder~~
@@ -136,3 +126,13 @@ create a blog post for each projects 'reflection'
 ~~touch up TouchDesigner repo (rename it to sketches)~~
 
 - ~~small tutorial / explanation of each project~~
+
+~~create documents/certifications pdf~~
+
+- ~~host on dropbox~~
+- ~~highschool 2nd in the world IGCSEs~~
+- ~~UPCSE Foundation~~
+- ~~microsoft 2013 certs~~
+- ~~competitions pdf~~
+  - ~~programming comps (\_\_PC)~~
+  - ~~thons (datathon, hackathon)~~
