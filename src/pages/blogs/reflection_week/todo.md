@@ -17,7 +17,7 @@ while adding readmes:
 
 - add screenshots with the readmes
 
-touch and fix dashboard twitter visualization (will be reworked in golang) [new dataset](https://crisisnlp.qcri.org/covid19)
+touch and fix dashboard twitter visualization (will be reworked with a [new dataset](https://crisisnlp.qcri.org/covid19))
 
 - readme.md
 - change input to csv (or json)
