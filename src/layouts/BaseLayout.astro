@@ -6,22 +6,22 @@ const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>H-Blogs</title>
-	</head>
-	<body>
-		<div class="w-full h-full md:p-3 flex flex-col sm:flex-row">
-			<div class="w-1/4">
-				<Navigation />
-			</div>
-			<div class="w-full p-10 sm:p-0">
-				<Header pageTitle={pageTitle} />
-				<slot />
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>HamnYce Blogs</title>
+  </head>
+  <body>
+    <div class="w-full h-full md:p-3 flex flex-col sm:flex-row">
+      <div class="w-1/4">
+        <Navigation />
+      </div>
+      <div class="w-full p-10 sm:p-0">
+        <Header pageTitle={pageTitle} />
+        <slot />
+      </div>
+    </div>
+  </body>
 </html>
