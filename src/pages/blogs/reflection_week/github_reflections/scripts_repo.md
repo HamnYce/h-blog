@@ -5,7 +5,7 @@ tags:
   - github
   - repo
   - scripting
-title: 'scripts' Repo Reflection
+title: scripts Repo Reflection
 pubDate: 1/17/2025
 layout: ../../../../layouts/MarkdownLayout.astro
 ---
