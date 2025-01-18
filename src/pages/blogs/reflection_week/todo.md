@@ -11,6 +11,8 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 ### Uncategorized
 
+create a foldable directory style navigation system in the sidebar using (rip the logic from the graph file graph visualizer)
+
 while adding readmes:
 
 - add screenshots with the readmes
