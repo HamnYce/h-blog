@@ -78,6 +78,10 @@ make foodwiz open source
   - ~~firebase.json~~
   - ~~package.json~~
 
+recreate p5js sketches from instagram and host them (as collage)
+
+- include sketches from p5js.org (in account)
+
 create a blog post for each projects 'reflection'
 
 ## Todo
@@ -96,10 +100,6 @@ while adding readmes:
 complete chess ruby
 
 - en pessant
-
-recreate p5js sketches from instagram and host them (as collage)
-
-- include sketches from p5js.org (in account)
 
 make kanban standalone (perhaps open-source it)
 
