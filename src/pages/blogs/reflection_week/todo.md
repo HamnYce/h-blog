@@ -134,3 +134,5 @@ clean up google drive
 update resume
 
 implement portfolio website (once design finishes)
+
+setup github profile page
