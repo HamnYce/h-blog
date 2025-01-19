@@ -1,3 +1,6 @@
 {
-  "cSpell.words": ["Uncategorized"]
+  "cSpell.words": ["Uncategorized"],
+  "files.watcherExclude": {
+    "**/target": true
+  }
 }
