@@ -20,6 +20,8 @@ Try to recomplete an old project with unreadable code is very hard
 
 always make your code readable, you never know when you'll need to read it.
 
+for now this will wrap up the adventures of this repo. On to the next and hopefully one day i can come back to revisit this and make it something much more. I believe in this project but atm there are more fish to hunt.
+
 ## API Usage
 
 i ended up using geopy to decode the location data. midway through the forloop i realised that its gonna take a while.

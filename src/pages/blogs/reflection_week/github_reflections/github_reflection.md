@@ -35,7 +35,6 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - jsb (redacted): None
 - jf (redacted): None
 - megaman-zero-clone-godot: megaman zero clone
-- mini-games-ruby: mini games written while learning ruby
 - music-mood-matcher: music recommendation system using sentiment analysis
 - numerical-analysis-notebook: analysis of iterative vs analytical solutions
 - obsidian-vault: various categorized and uncategorized notes
@@ -44,6 +43,7 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - text-based-adventure-game: first 'full' project ever written
 - themy-net: full-stack application to scan,store and allow categorization of network devices
 - touch-designer-sketches: for-fun sketches made in touchdesigner
+- the-odin-project: progress from the odin project
 
 \*repos are private by default and will be made public once a nice readme has been added
 
@@ -51,32 +51,27 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 
 [Making A Good Readme](https://www.makeareadme.com)
 
-- [ ] build-your-own-lisp-c
+- [x] build-your-own-lisp-c
 - [ ] chess-ruby
 - [ ] client-server-chat-app-wails
 - [x] coding-challenges
 - [x] configs
 - [ ] ffxiv-tribal-quest-scraper-notebook
 - [ ] foodwiz-react-native
-- [ ] geotag-tweet-visualisation
+- [x] geotag-tweet-visualisation
 - [ ] h-blog
 - [ ] jsb (redacted)
 - [ ] jf (redacted)
 - [ ] megaman-zero-clone-godot
-- [ ] mini-games-ruby
 - [ ] music-mood-matcher
 - [ ] numerical-analysis-notebook
 - [ ] obsidian-vault
 - [ ] portfolio
 - [x] scripts
-
-  - [x] run-command-on-file-change
-  - [x] scrape-links
-  - [x] scrape-subreddit-top-images
-
 - [ ] text-based-adventure-game
 - [ ] themy-net
-- [ ] touch-designer-sketches
+- [x] touch-designer-sketches
+- [x] the-odin-project
 
 ## reflections
 
