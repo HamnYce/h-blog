@@ -66,6 +66,10 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 - ~~clean the blog repo~~
 
+~~clean up numerical project repo~~
+
+- ~~place brief readme of the assignment and what was requested~~
+
 ## In Progress
 
 have amazing READMEs (nested if necessary)
@@ -115,10 +119,6 @@ clean up tribal quests scraper
 
 - add some note on how people can use it (maybe host it somewhere)
 - find some use for it for people to use it (either as a bin or as an endpoint)
-
-clean up numerical project repo
-
-- place brief readme of the assignment and what was requested
 
 clean up music-mood-matcher
 
