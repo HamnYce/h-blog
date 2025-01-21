@@ -9,6 +9,14 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 ## Done
 
+<!-- opensource foodwiz
+
+- include instructions on how to run it
+  - label it as built as an expo app
+  - label the important dependencies and configurations that must take place
+- remove the api keys (OR just de-auth them)!
+- explain the what the program was doing and so on. -->
+
 ~~touch and fix dashboard twitter visualization~~
 
 - ~~readme.md~~
@@ -106,14 +114,6 @@ complete chess ruby
 - en pessant
 
 make kanban standalone (perhaps open-source it)
-
-opensource foodwiz
-
-- include instructions on how to run it
-  - label it as built as an expo app
-  - label the important dependencies and configurations that must take place
-- remove the api keys (OR just de-auth them)!
-- explain the what the program was doing and so on.
 
 clean up tribal quests scraper
 

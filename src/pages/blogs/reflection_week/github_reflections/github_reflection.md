@@ -57,11 +57,11 @@ the convention that will be adopted is lower-kebab-case with a focus on specifit
 - [x] coding-challenges
 - [x] configs
 - [ ] ffxiv-tribal-quest-scraper-notebook
-- [ ] foodwiz-react-native
+- [x] foodwiz-react-native (renamed to calorie-tracking-app-react-native)
 - [x] geotag-tweet-visualisation
 - [ ] h-blog
-- [ ] jsb (redacted)
-- [ ] jf (redacted)
+- [x] jsb (redacted)
+- [x] jf (redacted)
 - [ ] megaman-zero-clone-godot
 - [ ] music-mood-matcher
 - [ ] numerical-analysis-notebook
@@ -104,3 +104,5 @@ GPT and copilot have been instrumental to rewriting the scripts i made as well a
 although i worry at time that i might be losing experience by not writing the scripts myself. I can say that I am definetly getting a feel for it.
 
 but as they say, experience is king! so i will aim to eventually write these scripts myself
+
+for foodwiz I ended up just removing everything except the source code that I had written. Much easier than picking files one by one.
