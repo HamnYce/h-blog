@@ -31,7 +31,7 @@ const urls = allPosts.reduce((acc, post) => {
 }, {} as Directory);
 ---
 
-<ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+<ul class="menu bg-base-200 text-base-content w-full min-h-full p-4">
   <Graph posts={allPosts} />
   <li></li>
   <!-- Sidebar content here -->
@@ -51,7 +51,7 @@ const urls = allPosts.reduce((acc, post) => {
 
         return (
           <li>
-            <details class="dropdown w-full p-0">
+            <details class="dropdown w-full p-0" open>
               <summary class="w-full pl-1 py-1 m-0">{name}</summary>
               <ul class="menu w-full bg-transparent rounded-box z-[1] ml-0.5 pr-0.5 ">
                 {Object.keys(d).map((dirName: string) => {
