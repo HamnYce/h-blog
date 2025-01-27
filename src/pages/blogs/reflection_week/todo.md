@@ -9,13 +9,18 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 ## Done
 
-<!-- opensource foodwiz
+~~opensource foodwiz~~
 
-- include instructions on how to run it
-  - label it as built as an expo app
-  - label the important dependencies and configurations that must take place
-- remove the api keys (OR just de-auth them)!
-- explain the what the program was doing and so on. -->
+- ~~include instructions on how to run it~~
+  - ~~label it as built as an expo app~~
+  - ~~label the important dependencies and configurations that must take place~~
+- ~~remove the api keys (OR just de-auth them)!~~
+- ~~explain the what the program was doing and so on. ~~
+
+~~clean up music-mood-matcher~~
+
+- ~~opensource it~~
+- ~~place a good readme. as well as how to use it.~~
 
 ~~touch and fix dashboard twitter visualization~~
 
@@ -82,19 +87,11 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 have amazing READMEs (nested if necessary)
 
-make foodwiz open source
-
-- remove every file except:
-  - ~~app/~~
-  - ~~src/~~
-  - ~~firebase.json~~
-  - ~~package.json~~
-
 recreate p5js sketches from instagram and host them (as collage)
 
 - include sketches from p5js.org (in account)
 
-create a blog post for each projects 'reflection'
+~~create a blog post for each projects 'reflection' (abandoned)~~
 
 ## Todo
 
@@ -119,13 +116,6 @@ clean up tribal quests scraper
 
 - add some note on how people can use it (maybe host it somewhere)
 - find some use for it for people to use it (either as a bin or as an endpoint)
-
-clean up music-mood-matcher
-
-- opensource it
-- rename it
-- place a good readme. as well as how to use it.
-- reupload the project (if there are private credentials exposed)
 
 add nice readme to adventure-game-repo
 
