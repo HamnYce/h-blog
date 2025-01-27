@@ -87,6 +87,10 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 - ~~add nice readme~~
 
+~~while adding readmes:~~
+
+- ~~add screenshots with the readmes~~
+
 ## In Progress
 
 have amazing READMEs (nested if necessary)
@@ -104,10 +108,6 @@ recreate p5js sketches from instagram and host them (as collage)
 h-blog:
 
 - create a foldable directory style navigation system in the sidebar using (rip the logic from the graph file graph visualizer)
-
-while adding readmes:
-
-- add screenshots with the readmes
 
 complete chess ruby
 
