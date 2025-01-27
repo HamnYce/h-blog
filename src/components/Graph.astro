@@ -24,11 +24,11 @@ const links = posts.flatMap((post) => {
 ---
 
 <div id="graph-container" class="w-full h-20"></div>
-<script type="module" define:vars={{ nodes, links }} is:inline>
+<script type="module" define:vars={{ nodes_: nodes, links_: links }} is:inline>
   import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-  const nodes = nodes;
-  const links = links;
+  const nodes = nodes_;
+  const links = links_;
 
   const graphContainer = document.querySelector("#graph-container");
 
