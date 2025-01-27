@@ -31,7 +31,9 @@ const urls = allPosts.reduce((acc, post) => {
 }, {} as Directory);
 ---
 
-<ul class="menu bg-base-200 text-base-content w-full min-h-full p-4">
+<ul
+  class="menu bg-base-200 rounded-box text-base-content w-full min-h-full p-2"
+>
   <Graph posts={allPosts} />
   <li></li>
   <!-- Sidebar content here -->
