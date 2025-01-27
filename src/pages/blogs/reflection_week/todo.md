@@ -83,6 +83,10 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 - ~~place brief readme of the assignment and what was requested~~
 
+~~h-blog:~~
+
+- ~~add nice readme~~
+
 ## In Progress
 
 have amazing READMEs (nested if necessary)
@@ -100,7 +104,6 @@ recreate p5js sketches from instagram and host them (as collage)
 h-blog:
 
 - create a foldable directory style navigation system in the sidebar using (rip the logic from the graph file graph visualizer)
-- add nice readme
 
 while adding readmes:
 
