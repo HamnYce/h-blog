@@ -91,27 +91,35 @@ layout: ../../../layouts/MarkdownLayout.astro
 
 - ~~add screenshots with the readmes~~
 
-## In Progress
+~~update resume~~
 
-have amazing READMEs (nested if necessary)
+~~clean up google drive~~
+
+~~complete chess ruby~~
+
+- ~~en pessant (abandoned due to horrible codebase)~~
+
+~~h-blog~~
+
+- ~~create a foldable directory style navigation system in the sidebar~~
+
+~~setup github profile page~~
+
+- ~~added link to blog, profile picture, pinned repos~~
+
+~~have amazing READMEs (nested if necessary, perhaps not amazing but definelty an improvement)~~
+
+~~create a blog post for each projects 'reflection' (abandoned)~~
+
+## In Progress
 
 recreate p5js sketches from instagram and host them (as collage)
 
 - include sketches from p5js.org (in account)
 
-~~create a blog post for each projects 'reflection' (abandoned)~~
-
 ## Todo
 
 ### Uncategorized
-
-h-blog:
-
-- create a foldable directory style navigation system in the sidebar using (rip the logic from the graph file graph visualizer)
-
-complete chess ruby
-
-- en pessant
 
 make kanban standalone (perhaps open-source it)
 
@@ -122,10 +130,4 @@ clean up tribal quests scraper
 
 add nice readme to adventure-game-repo
 
-clean up google drive
-
-update resume
-
 implement portfolio website (once design finishes)
-
-setup github profile page
