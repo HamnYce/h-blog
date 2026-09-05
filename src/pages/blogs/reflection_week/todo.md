@@ -15,7 +15,7 @@ layout: ../../../layouts/MarkdownLayout.astro
   - ~~label it as built as an expo app~~
   - ~~label the important dependencies and configurations that must take place~~
 - ~~remove the api keys (OR just de-auth them)!~~
-- ~~explain the what the program was doing and so on. ~~
+- ~~explain the what the program was doing and so on.~~
 
 ~~clean up music-mood-matcher~~
 

@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { slugifyTag } from "../lib/tags";
+
+const allPosts = await Astro.glob("./blogs/**/*.md");
+
+const tagMap = new Map<string, { url: string; title: string }[]>();
+for (const post of allPosts) {
+  const tags: string[] = post.frontmatter.tags ?? [];
+  const url = post.url;
+  const title = post.frontmatter.title;
+  if (!url) continue;
+  for (const tag of tags) {
+    if (!tagMap.has(tag)) tagMap.set(tag, []);
+    tagMap.get(tag)!.push({ url, title });
+  }
+}
+
+const sortedTags = [...tagMap.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+
+<BaseLayout pageTitle="Tags">
+  <div class="flex flex-wrap gap-2 mb-6">
+    {
+      sortedTags.map(([tag]) => (
+        <a href={`#${slugifyTag(tag)}`} class="badge badge-outline">
+          {tag} ({tagMap.get(tag)!.length})
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="flex flex-col gap-6">
+    {
+      sortedTags.map(([tag, posts]) => (
+        <section id={slugifyTag(tag)}>
+          <h2 class="text-2xl mb-1">{tag}</h2>
+          <ul class="menu bg-base-200 rounded-box">
+            {posts.map((post) => (
+              <li>
+                <a href={post.url}>{post.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>
