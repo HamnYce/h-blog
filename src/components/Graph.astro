@@ -1,13 +1,27 @@
 ---
-const { posts }: Record<string, Record<string, any>[]> = Astro.props;
+interface Props {
+  posts: Record<string, any>[];
+  currentPath?: string;
+}
+
+const { posts, currentPath }: Props = Astro.props;
 
 const postByUrl = new Map(posts.filter((p) => p.url).map((p) => [p.url, p]));
 
-const nodes = [...postByUrl.values()].map((post) => ({
-  id: post.url as string,
-  label: (post.frontmatter?.title as string) ?? post.url,
-  group: (post.url as string).split("/")[2] ?? "root",
-}));
+function shortLabel(title: string, max = 22): string {
+  return title.length > max ? title.slice(0, max - 1) + "…" : title;
+}
+
+const nodes = [...postByUrl.values()].map((post) => {
+  const title = (post.frontmatter?.title as string) ?? post.url;
+  return {
+    id: post.url as string,
+    title,
+    label: shortLabel(title),
+    group: (post.url as string).split("/")[2] ?? "root",
+    current: post.url === currentPath,
+  };
+});
 
 // URLs can contain literal parentheses (e.g. rnns_(recurrent_neural_networks)),
 // so a generic `](...)` regex can't reliably find the closing paren. Since the
@@ -25,7 +39,7 @@ for (const post of postByUrl.values()) {
 }
 ---
 
-<div id="graph-container" class="w-full h-[32rem]"></div>
+<div id="graph-container" class="w-full h-[26rem] bg-base-200 rounded-box mb-2"></div>
 <script type="module" define:vars={{ nodes_: nodes, links_: links }} is:inline>
   import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
@@ -49,10 +63,11 @@ for (const post of postByUrl.values()) {
     .forceSimulation(nodes)
     .force(
       "link",
-      d3.forceLink(links).id((d) => d.id).distance(60)
+      d3.forceLink(links).id((d) => d.id).distance(70)
     )
-    .force("charge", d3.forceManyBody().strength(-150))
+    .force("charge", d3.forceManyBody().strength(-180))
     .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collide", d3.forceCollide(28))
     .on("tick", ticked);
 
   // Create the SVG container.
@@ -75,19 +90,39 @@ for (const post of postByUrl.values()) {
 
   const node = svg
     .append("g")
-    .attr("stroke", "#fff")
-    .attr("stroke-width", 1.5)
     .selectAll()
     .data(nodes)
     .join("circle")
-    .attr("r", 6)
-    .attr("fill", (d) => color(d.group))
+    .attr("r", (d) => (d.current ? 8 : 5))
+    .attr("fill", (d) => (d.current ? "currentColor" : color(d.group)))
+    .attr("class", (d) => (d.current ? "text-warning" : ""))
+    .attr("stroke", (d) => (d.current ? "currentColor" : "#fff"))
+    .attr("stroke-width", (d) => (d.current ? 2 : 1.5))
     .attr("cursor", "pointer")
     .on("click", (event, d) => {
       window.location.href = d.id;
     });
 
-  node.append("title").text((d) => d.label);
+  node.append("title").text((d) => d.title);
+
+  // Persistent labels, since a title tooltip alone doesn't tell you what's
+  // in the graph without hovering every node.
+  const label = svg
+    .append("g")
+    .selectAll()
+    .data(nodes)
+    .join("text")
+    .attr(
+      "class",
+      (d) =>
+        `fill-current pointer-events-none select-none ${
+          d.current ? "text-warning font-semibold" : "text-base-content/70"
+        }`
+    )
+    .attr("font-size", (d) => (d.current ? 11 : 9))
+    .attr("dx", 9)
+    .attr("dy", 3)
+    .text((d) => d.label);
 
   // Add a drag behavior.
   node.call(
@@ -103,6 +138,7 @@ for (const post of postByUrl.values()) {
       .attr("y2", (d) => d.target.y);
 
     node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+    label.attr("x", (d) => d.x).attr("y", (d) => d.y);
   }
 
   // Reheat the simulation when drag starts, and fix the subject position.

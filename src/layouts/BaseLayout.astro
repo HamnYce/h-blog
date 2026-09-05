@@ -17,13 +17,14 @@ const { pageTitle } = Astro.props;
     <title>HamnYce Blogs</title>
   </head>
   <body>
-    <div class="w-full h-full md:p-3 flex flex-col sm:flex-row">
-      <div class="w-full sm:w-1/2 sm:max-w-52">
-        <Navigation />
+    <div class="w-full h-full md:p-3 flex flex-col sm:flex-row sm:gap-6">
+      <div
+        class="w-full sm:w-80 sm:shrink-0 sm:self-start sm:sticky sm:top-3 sm:max-h-[calc(100vh-1.5rem)] sm:overflow-y-auto"
+      >
+        <Navigation currentPath={Astro.url.pathname} />
       </div>
-      <div class="mr-2"></div>
-      <div class="w-full p-10 sm:p-0">
-        <h1 class="text-4xl">
+      <div class="w-full max-w-3xl p-10 sm:p-3">
+        <h1 class="text-4xl mb-4">
           {pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)}
         </h1>
         <slot />

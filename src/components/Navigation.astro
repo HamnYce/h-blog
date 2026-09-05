@@ -2,6 +2,12 @@
 import Graph from "../components/Graph.astro";
 import type { MarkdownInstance } from "astro";
 
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath }: Props = Astro.props;
+
 type Directory = {
   [key: string]: Directory | MarkdownInstance<Record<string, any>>;
 };
@@ -14,7 +20,9 @@ const urls = allPosts.reduce((acc, post) => {
     return acc;
   }
 
-  const dirs = url.slice(1).split("/");
+  // drop the leading "blogs" segment: every post lives under it, so it's
+  // just noise in the tree.
+  const dirs = url.slice(1).split("/").slice(1);
   // creating subdirectories
   let cd = acc;
   for (let i = 0; i < dirs.length - 1; i++) {
@@ -32,22 +40,33 @@ const urls = allPosts.reduce((acc, post) => {
 ---
 
 <ul
-  class="menu bg-base-200 rounded-box text-base-content w-full min-h-full p-2"
+  class="menu bg-base-200 rounded-box text-base-content w-full min-h-full p-2 gap-0.5"
 >
-  <Graph posts={allPosts} />
+  <Graph posts={allPosts} currentPath={currentPath} />
   <li></li>
   <!-- Sidebar content here -->
-  <li><a href="/" class="w-full text-center">Homepage</a></li>
-  <li><a href="/tags" class="w-full text-center">Tags</a></li>
+  <li>
+    <a href="/" class:list={["w-full text-center", { active: currentPath === "/" }]}>
+      Homepage
+    </a>
+  </li>
+  <li>
+    <a href="/tags" class:list={["w-full text-center", { active: currentPath === "/tags" }]}>
+      Tags
+    </a>
+  </li>
   <li></li>
   {
     (() => {
       const renderUrls = (name: string, d: DirEnd) => {
         // hack to decide if d is a file
         if (d.frontmatter) {
+          const url = d.url as string;
           return (
             <li>
-              <a href={d.url as string}>{(d.frontmatter as any).title}</a>
+              <a href={url} class:list={{ active: url === currentPath }}>
+                {(d.frontmatter as any).title}
+              </a>
             </li>
           );
         }
@@ -55,8 +74,8 @@ const urls = allPosts.reduce((acc, post) => {
         return (
           <li>
             <details class="dropdown w-full p-0" open>
-              <summary class="w-full pl-1 py-1 m-0">{name}</summary>
-              <ul class="menu w-full bg-transparent rounded-box z-[1] ml-0.5 pr-0.5 ">
+              <summary class="w-full pl-2 py-1.5 m-0">{name}</summary>
+              <ul class="menu w-full bg-transparent rounded-box z-[1] ml-2 pr-1 gap-0.5">
                 {Object.keys(d).map((dirName: string) => {
                   return renderUrls(dirName, (d as Directory)[dirName]);
                 })}
@@ -65,7 +84,7 @@ const urls = allPosts.reduce((acc, post) => {
           </li>
         );
       };
-      return renderUrls("root", urls);
+      return Object.keys(urls).map((topKey) => renderUrls(topKey, urls[topKey]));
     })()
   }
 </ul>
