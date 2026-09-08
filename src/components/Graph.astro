@@ -8,17 +8,32 @@ const { posts, currentPath }: Props = Astro.props;
 
 const postByUrl = new Map(posts.filter((p) => p.url).map((p) => [p.url, p]));
 
-function shortLabel(title: string, max = 22): string {
+function shortLabel(title: string, max = 18): string {
   return title.length > max ? title.slice(0, max - 1) + "…" : title;
 }
 
+// Theme colours rather than fixed hex, so the graph follows light/dark mode.
+// Written as whole literal class names so Tailwind picks them up.
+const groupClasses = [
+  "text-primary",
+  "text-accent",
+  "text-secondary",
+  "text-info",
+  "text-success",
+];
+
+const groupNames = [
+  ...new Set(posts.filter((p) => p.url).map((p) => p.url.split("/")[2] ?? "root")),
+];
+
 const nodes = [...postByUrl.values()].map((post) => {
   const title = (post.frontmatter?.title as string) ?? post.url;
+  const group = (post.url as string).split("/")[2] ?? "root";
   return {
     id: post.url as string,
     title,
     label: shortLabel(title),
-    group: (post.url as string).split("/")[2] ?? "root",
+    colorClass: groupClasses[groupNames.indexOf(group) % groupClasses.length],
     current: post.url === currentPath,
   };
 });
@@ -37,9 +52,16 @@ for (const post of postByUrl.values()) {
     }
   }
 }
+
+// Notes nothing links to (and that link to nothing) get laid out as a ring of
+// islands around the connected cluster, rather than piling up on an edge.
+const linked = new Set(links.flatMap((l) => [l.source, l.target]));
+for (const node of nodes) {
+  (node as any).isolated = !linked.has(node.id);
+}
 ---
 
-<div id="graph-container" class="w-full h-[26rem] bg-base-200 rounded-box mb-2"></div>
+<div id="graph-container" class="w-full h-[30rem] bg-base-200 rounded-box mb-2"></div>
 <script type="module" define:vars={{ nodes_: nodes, links_: links }} is:inline>
   import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
@@ -51,23 +73,31 @@ for (const post of postByUrl.values()) {
   // Specify the dimensions of the chart.
   const width = graphContainer.offsetWidth;
   const height = graphContainer.offsetHeight;
+  const margin = 14;
 
-  // Specify the color scale.
-  const color = d3.scaleOrdinal(d3.schemeCategory10);
-
-  // The force simulation mutates links and nodes, so create a copy
-  // so that re-evaluating this cell produces the same result.
-
-  // Create a simulation with several forces.
+  // Create a simulation with several forces. The x/y forces keep unlinked
+  // notes gathered near the middle instead of being flung to the edges.
   const simulation = d3
     .forceSimulation(nodes)
     .force(
       "link",
       d3.forceLink(links).id((d) => d.id).distance(70)
     )
-    .force("charge", d3.forceManyBody().strength(-180))
+    .force("charge", d3.forceManyBody().strength(-260))
     .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide", d3.forceCollide(28))
+    .force("x", d3.forceX(width / 2).strength(0.03))
+    .force("y", d3.forceY(height / 2).strength(0.03))
+    .force(
+      "islands",
+      d3
+        .forceRadial(
+          Math.min(width, height) * 0.44,
+          width / 2,
+          height / 2
+        )
+        .strength((d) => (d.isolated ? 0.5 : 0))
+    )
+    .force("collide", d3.forceCollide(22))
     .on("tick", ticked);
 
   // Create the SVG container.
@@ -81,8 +111,8 @@ for (const post of postByUrl.values()) {
   // Add a line for each link, and a circle for each node.
   const link = svg
     .append("g")
-    .attr("stroke", "#999")
-    .attr("stroke-opacity", 0.6)
+    .attr("class", "stroke-base-content")
+    .attr("stroke-opacity", 0.3)
     .selectAll()
     .data(links)
     .join("line")
@@ -90,14 +120,14 @@ for (const post of postByUrl.values()) {
 
   const node = svg
     .append("g")
+    .attr("class", "stroke-base-100")
     .selectAll()
     .data(nodes)
     .join("circle")
     .attr("r", (d) => (d.current ? 8 : 5))
-    .attr("fill", (d) => (d.current ? "currentColor" : color(d.group)))
-    .attr("class", (d) => (d.current ? "text-warning" : ""))
-    .attr("stroke", (d) => (d.current ? "currentColor" : "#fff"))
-    .attr("stroke-width", (d) => (d.current ? 2 : 1.5))
+    .attr("fill", "currentColor")
+    .attr("class", (d) => (d.current ? "text-warning" : d.colorClass))
+    .attr("stroke-width", (d) => (d.current ? 2.5 : 1.5))
     .attr("cursor", "pointer")
     .on("click", (event, d) => {
       window.location.href = d.id;
@@ -120,7 +150,6 @@ for (const post of postByUrl.values()) {
         }`
     )
     .attr("font-size", (d) => (d.current ? 11 : 9))
-    .attr("dx", 9)
     .attr("dy", 3)
     .text((d) => d.label);
 
@@ -131,6 +160,13 @@ for (const post of postByUrl.values()) {
 
   // Set the position attributes of links and nodes each time the simulation ticks.
   function ticked() {
+    // Keep every note inside the frame, so island notes can't drift out of
+    // view and labels never get clipped at the edge.
+    nodes.forEach((d) => {
+      d.x = Math.max(margin, Math.min(width - margin, d.x));
+      d.y = Math.max(margin, Math.min(height - margin, d.y));
+    });
+
     link
       .attr("x1", (d) => d.source.x)
       .attr("y1", (d) => d.source.y)
@@ -138,7 +174,10 @@ for (const post of postByUrl.values()) {
       .attr("y2", (d) => d.target.y);
 
     node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-    label.attr("x", (d) => d.x).attr("y", (d) => d.y);
+    label
+      .attr("x", (d) => d.x + (d.x > width / 2 ? -10 : 10))
+      .attr("y", (d) => d.y)
+      .attr("text-anchor", (d) => (d.x > width / 2 ? "end" : "start"));
   }
 
   // Reheat the simulation when drag starts, and fix the subject position.

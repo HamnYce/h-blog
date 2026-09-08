@@ -8,13 +8,55 @@ interface Props {
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="lavender">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>HamnYce Blogs</title>
+    <script is:inline>
+      // Runs before paint so the page never flashes the wrong theme.
+      (() => {
+        const DARK = "lavender-dark";
+        const LIGHT = "lavender";
+        const root = document.documentElement;
+
+        let stored = null;
+        try {
+          stored = localStorage.getItem("theme");
+        } catch {}
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        root.setAttribute("data-theme", stored ?? (prefersDark ? DARK : LIGHT));
+
+        const syncIcons = () => {
+          const isDark = root.getAttribute("data-theme") === DARK;
+          document
+            .getElementById("theme-icon-dark")
+            ?.toggleAttribute("hidden", !isDark);
+          document
+            .getElementById("theme-icon-light")
+            ?.toggleAttribute("hidden", isDark);
+          const label = document.getElementById("theme-label");
+          if (label) label.textContent = isDark ? "Dark" : "Light";
+        };
+
+        document.addEventListener("DOMContentLoaded", syncIcons);
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest("#theme-toggle")) return;
+          root.setAttribute(
+            "data-theme",
+            root.getAttribute("data-theme") === DARK ? LIGHT : DARK
+          );
+          try {
+            localStorage.setItem("theme", root.getAttribute("data-theme"));
+          } catch {}
+          syncIcons();
+        });
+      })();
+    </script>
   </head>
   <body>
     <div class="w-full h-full md:p-3 flex flex-col sm:flex-row sm:gap-6">

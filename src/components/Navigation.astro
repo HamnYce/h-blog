@@ -1,5 +1,6 @@
 ---
 import Graph from "../components/Graph.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 import type { MarkdownInstance } from "astro";
 
 interface Props {
@@ -55,6 +56,7 @@ const urls = allPosts.reduce((acc, post) => {
       Tags
     </a>
   </li>
+  <li class="mt-1"><ThemeToggle /></li>
   <li></li>
   {
     (() => {
